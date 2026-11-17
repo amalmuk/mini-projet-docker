@@ -5,7 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # Lire le message depuis une variable d'environnement
-MESSAGE = os.getenv("APP_MESSAGE", "Bienvenue dans mon premier projet Docker !")
+MESSAGE = os.getenv("APP_MESSAGE", "Bienvenue dans mon mini-projet Docker - Version 1.1 !")
 
 @app.route("/")
 def home():
