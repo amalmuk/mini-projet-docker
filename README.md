@@ -1,16 +1,22 @@
-
-
 \# Mini-projet 1 – Docker
 
 
 
-\## Description
-
-Application web développée avec Python Flask et conteneurisée avec Docker.
+\## 1. Description
 
 
 
-\## Technologies utilisées
+Ce projet consiste à développer une application web avec Python Flask et à la conteneuriser avec Docker.
+
+
+
+L'application affiche un message personnalisable grâce à une variable d'environnement.
+
+
+
+\## 2. Technologies utilisées
+
+
 
 \- Python 3.12
 
@@ -20,23 +26,31 @@ Application web développée avec Python Flask et conteneurisée avec Docker.
 
 \- Docker Hub
 
-
-
-\## Structure du projet
-
-\- app.py : application Flask
-
-\- requirements.txt : dépendances Python
-
-\- Dockerfile : instructions de construction
-
-\- .dockerignore : fichiers exclus de la construction
-
-\- README.md : documentation
+\- Git et GitHub
 
 
 
-\## Construction de l'image
+\## 3. Structure du projet
+
+
+
+\- `app.py` : application Flask.
+
+\- `requirements.txt` : dépendances Python.
+
+\- `Dockerfile` : instructions de construction de l'image.
+
+\- `.dockerignore` : fichiers exclus du contexte de construction.
+
+\- `.gitignore` : fichiers exclus du dépôt Git.
+
+\- `README.md` : documentation du projet.
+
+
+
+\## 4. Construction de l'image Docker
+
+
 
 ```bash
 
@@ -46,7 +60,9 @@ docker build -t mini-projet-flask:1.0 .
 
 
 
-\## Lancement du conteneur
+\## 5. Lancement du conteneur
+
+
 
 ```bash
 
@@ -56,29 +72,85 @@ docker run -d --name mini-flask -p 5000:5000 mini-projet-flask:1.0
 
 
 
-\## Accès à l'application
+\## 6. Accès à l'application
+
+
+
+Ouvrir le navigateur à l'adresse :
+
+
 
 http://localhost:5000
 
 
 
-\## Configuration
-
-La variable d'environnement APP\_MESSAGE permet de personnaliser le message affiché.
+\## 7. Configuration avec une variable d'environnement
 
 
 
-\## Image Docker Hub
-
-amalmabrouk91/mini-projet-flask
+La variable `APP\_MESSAGE` permet de personnaliser le message affiché par l'application.
 
 
 
-\## Versions publiées
+Exemple :
 
-\- 1.0
 
-\- 2.0
+
+```bash
+
+docker run -d --name mini-flask-env -p 5001:5000 -e APP\_MESSAGE="Bonjour depuis Docker !" mini-projet-flask:1.0
+
+```
+
+
+
+\## 8. Versions publiées sur Docker Hub
+
+
+
+Les versions publiées sont :
+
+
+
+\- `1.0`
+
+\- `1.0.0`
+
+\- `1.0.1`
+
+\- `2.0`
+
+
+
+\## 9. Télécharger l'image depuis Docker Hub
+
+
+
+```bash
+
+docker pull amalmabrouk91/mini-projet-flask:1.0.1
+
+```
+
+
+
+\## 10. Liens du projet
+
+
+
+\*\*Docker Hub :\*\*
+
+
+
+https://hub.docker.com/r/amalmabrouk91/mini-projet-flask
+
+
+
+\*\*GitHub :\*\*
+
+
+
+https://github.com/amalmuk/mini-projet-docker
 
 
 
